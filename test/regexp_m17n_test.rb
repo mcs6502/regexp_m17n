@@ -9,6 +9,10 @@ class RegexpTest < MiniTest::Unit::TestCase
     end
   end
 
+  def test_non_empty_nil
+    assert(!RegexpM17N.non_empty?(nil))
+  end
+
   def test_non_empty_string_using_all_code_converters_we_could_find
     Encoding.list.each do |enc|
       str = encode('.', enc)
